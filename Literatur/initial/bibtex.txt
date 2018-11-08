@@ -1,0 +1,113 @@
+@inproceedings{stevens2017a,
+author = {Stevens, Perdita},
+booktitle = {2017 ACM/IEEE 20th International Conference on Model Driven
+Engineering Languages and Systems (MODELS)},
+doi = {10.1109/MODELS.2017.8},
+keywords = {Computational modeling,Model-driven
+development,Safety,Software,Stakeholders,Unified modeling
+language,bidirectional transformation,binary consistency
+relations,consistency restoration,metamodels,multiary consistency
+relation,software engineering},
+month = {sep},
+pages = {1--11},
+title = {{Bidirectional Transformations in the Large}},
+year = {2017}
+}
+
+@conference{macedo2014a,
+address = {Athens, Greece},
+author = {Macedo, Nuno and Cunha, Alcino and Pacheco, Hugo},
+booktitle = {3rd International Workshop on Bidirectional Transformations -
+BX},
+organization = {CEUR-WS.org},
+publisher = {CEUR-WS.org},
+title = {{Towards a framework for multi-directional model transformations}},
+url =
+{http://haslab.uminho.pt/sites/default/files/nmacedo/files/bx14mx.pdf},
+volume = {1133},
+year = {2014}
+}
+
+@inbook{trollmann2015a,
+address = {Cham},
+author = {Trollmann, Frank and Albayrak, Sahin},
+booktitle = {Theory and Practice of Model Transformations: 8th International
+Conference, ICMT 2015, Held as Part of STAF 2015, L'Aquila, Italy, July
+20-21, 2015. Proceedings},
+doi = {10.1007/978-3-319-21155-8_16},
+editor = {Kolovos, Dimitris and Wimmer, Manuel},
+isbn = {978-3-319-21155-8},
+keywords = {multi-model},
+pages = {214--229},
+publisher = {Springer International Publishing},
+title = {{Extending Model to Model Transformation Results from Triple Graph
+Grammars to Multiple Models}},
+url = {http://dx.doi.org/10.1007/978-3-319-21155-8{\_}16},
+year = {2015}
+}
+
+@inbook{trollmann2016a,
+address = {Cham},
+author = {Trollmann, Frank and Albayrak, Sahin},
+booktitle = {Theory and Practice of Model Transformations: 9th International
+Conference, ICMT 2016, Held as Part of STAF 2016, Vienna, Austria, July 4-5,
+2016, Proceedings},
+doi = {10.1007/978-3-319-42064-6_7},
+editor = {{Van Gorp}, Pieter and Engels, Gregor},
+isbn = {978-3-319-42064-6},
+keywords = {multi-model},
+pages = {91--106},
+publisher = {Springer International Publishing},
+title = {{Extending Model Synchronization Results from Triple Graph Grammars
+to Multiple Models}},
+url = {http://dx.doi.org/10.1007/978-3-319-42064-6{\_}7},
+year = {2016}
+}
+
+@article{malavolta2010a,
+address = {Piscataway, NJ, USA},
+author = {Malavolta, Ivano and Muccini, Henry and Pelliccione, Patrizio and
+Tamburri, Damien},
+doi = {10.1109/TSE.2009.51},
+isbn = {0098-5589},
+issn = {00985589},
+journal = {IEEE Transactions on Software Engineering},
+number = {1},
+pages = {119--140},
+publisher = {IEEE Press},
+title = {{Providing Architectural Languages and Tools Interoperability
+Through Model Transformation Technologies}},
+volume = {36},
+year = {2010}
+}
+
+@mastersthesis{gleitze2017a,
+title = {{A Declarative Language for Preserving Consistency of Multiple
+Models}},
+author = {Gleitze, Joshua},
+address = {Karlsruhe},
+year = {2017},
+school = {Karlsruhe Institute of Technology (KIT)},
+type = {Bachelor's Thesis},
+address = {Karlsruhe, Germany},
+doi = {10.5445/IR/1000076905},
+url = {http://dx.doi.org/10.5445/IR/1000076905},
+pdf = {https://sdqweb.ipd.kit.edu/publications/pdfs/gleitze2017a.pdf},
+}
+
+@inproceedings{eramo2008a,
+address = {Washington, DC, USA},
+annote = {- ASP},
+author = {Eramo, Romina and Pierantonio, Alfonso and Romero, Jos{\'{e}}
+Ra{\'{u}}l and Vallecillo, Antonio},
+booktitle = {Proceedings of the 12th Enterprise Distributed Object Computing
+Conference Workshops (EDOCW 2008)},
+doi = {10.1109/EDOCW.2008.22},
+isbn = {978-0-7695-3720-7},
+issn = {15417719},
+keywords = {constraint solving},
+pages = {433--440},
+publisher = {IEEE Computer Society},
+title = {{Change Management in Multi-Viewpoint System Using ASP}},
+year = {2008}
+}

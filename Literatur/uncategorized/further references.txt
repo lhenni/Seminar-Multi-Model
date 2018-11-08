@@ -1,0 +1,36 @@
+
+
+
+
+https://dl.acm.org/citation.cfm?id=3167425 : Heterogeneous design models alignment: from matching to consistency management
+https://ieeexplore.ieee.org/abstract/document/8369561 : Verification and validation of the consistency between multi-domain system models
+
+https://academic.microsoft.com/#/detail/1495470399 : Inter-Modelling with Graphical Constraints: Foundations and Applications
+https://academic.microsoft.com/#/detail/103299919 : Enabling Multi-View Modeling With SysML Profiles and Model Transformations
+
+
+https://ieeexplore.ieee.org/abstract/document/5945430 : View Consistency in Architectures for Cyber-Physical Systems
+https://link.springer.com/chapter/10.1007%2F11786160_5 : Refinement and Consistency in Component Models with Multiple Views
+https://ieeexplore.ieee.org/document/6468263 : A Checking Consistency Framework Based on Multi-View Models Towards Business Process Model Repository
+https://academic.microsoft.com/#/detail/2495599681 : Consistency Modeling in a Multi-Model Architecture
+https://www.duo.uio.no/handle/10852/8809 : Consistency Modeling in a Multi-Model Architecture : Integrate and Celebrate Diversity
+https://dl.acm.org/citation.cfm?doid=1243987.1243989 : Metamodel-based model conformance and multiview consistency checking
+https://ieeexplore.ieee.org/document/6601300 : A Model-Driven Approach for Ensuring Change Traceability and Multi-model Consistency
+https://dl.acm.org/citation.cfm?doid=2737182.2737194 : A Generative Approach to Change-Driven Consistency in Multi-View Modeling
+https://ieeexplore.ieee.org/document/7956568 : Supporting the consistency in multi-perspective Business Process Modeling: A mapping approach
+https://aisel.aisnet.org/ecis2016_rp/53/ : MANAGING CONSISTENCY IN MULTI-VIEW ENTERPRISE MODELS: AN APPROACH BASED ON SEMANTIC QUERIES
+https://opus4.kobv.de/opus4-bamberg/frontdoor/index/index/docId/44613 : A Development Method for the Conceptual Design of Multi-View Modeling Tools with an Emphasis on Consistency Requirements
+https://ieeexplore.ieee.org/document/8004345 : Constraint-Based Consistency Checking for Multi-View Models of Cyber-Physical System
+https://ieeexplore.ieee.org/document/8369561 : Verification and validation of the consistency between multi-domain system models
+
+
+https://dl.acm.org/citation.cfm?id=3191715 : Multimodel correspondence through inter-model constraints
+  * Probably purely analytical: checks for inconsistencies
+
+https://link.springer.com/chapter/10.1007%2F978-3-319-25264-3_23 : EMF Views: A View Mechanism for Integrating Heterogeneous Models
+* views redirect to underlying base model
+* if those base models are independent and only combined as part of those views -> no consistency problem?
+
+---
+* A Multiple-View Metamodeling Approach for Variability Management in Software Product Lines
+  * SUM? 

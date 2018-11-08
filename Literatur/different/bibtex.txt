@@ -1,0 +1,15 @@
+@article{XU2002563,
+title = "Multi-model technology and its application in the integration of CAD/CAM/CAE",
+journal = "Journal of Materials Processing Technology",
+volume = "129",
+number = "1",
+pages = "563 - 567",
+year = "2002",
+note = "The 10th International Manufacturing Conference in China (IMCC 2002)",
+issn = "0924-0136",
+doi = "https://doi.org/10.1016/S0924-0136(02)00639-8",
+url = "http://www.sciencedirect.com/science/article/pii/S0924013602006398",
+author = "X.Y Xu and Y.Y Wang",
+keywords = "Integration, CAD/CAM/CAE, Modeling, Cylinder head"
+}
+

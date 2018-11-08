@@ -1,0 +1,48 @@
+@phdthesis{Burger2014_1000043437,
+    author       = {Burger, Erik},
+    year         = {2014},
+    title        = {Flexible Views for View-based Model-driven Development},
+    doi          = {10.5445/KSP/1000043437},
+    publisher    = {{KIT Scientific Publishing, Karlsruhe}},
+    isbn         = {978-3-7315-0276-0},
+    issn         = {1867-0067},
+    series       = {The Karlsruhe Series on Software Design and Quality / Ed. by Prof. Dr. Ralf Reussner},
+    abstract     = {Modern software development faces the problem of fragmentation of information across heterogeneous artefacts in different modelling and programming languages. In this dissertation, the Vitruvius approach for view-based engineering is presented. Flexible views offer a compact definition of user-specific views on software systems, and can be defined the novel ModelJoin language. The process is supported by a change metamodel for metamodel evolution and change impact analysis.},
+    keywords     = {Vitruvius, ModelJoin, Modellgetriebene Software-Entwicklung, Sichtenbasierte Entwicklung, Vitruvius, ModelJoin, Model-Driven Software Development, View-based Engineering},
+    pagetotal    = {324},
+    language     = {english},
+    volume       = {15}
+}
+
+@inproceedings{kramer2013b,
+  acmid = {2489864},
+  address = {New York, NY, USA},
+  articleno = {5},
+  author = {Kramer, Max E. and Burger, Erik and Langhammer, Michael},
+  booktitle = {Proceedings of the 1st Workshop on View-Based, Aspect-Oriented and Orthographic Software Modelling},
+  doi = {10.1145/2489861.2489864},
+  isbn = {978-1-4503-2070-2},
+  keywords = {component-based software architectures, model-driven engineering, synchronization, view-based modeling},
+  location = {Montpellier, France},
+  numpages = {6},
+  pages = {5:1--5:6},
+  pdf = {http://sdqweb.ipd.kit.edu/publications/pdfs/kramer2013b.pdf},
+  publisher = {ACM},
+  series = {VAO '13},
+  tags = {workshop},
+  title = {View-centric engineering with synchronized heterogeneous models},
+  url = {http://doi.acm.org/10.1145/2489861.2489864},
+  year = {2013}
+}
+
+@phdthesis{Kramer2017_1000069284,
+    author       = {Kramer, Max Emanuel},
+    year         = {2017},
+    title        = {Specification Languages for Preserving Consistency between Models of Different Languages},
+    doi          = {10.5445/IR/1000069284},
+    publisher    = {{Karlsruhe}},
+    keywords     = {software engineering, model-driven engineering, programming languages},
+    pagetotal    = {278},
+    school       = {Karlsruher Institut für Technologie (KIT)},
+    language     = {english}
+}

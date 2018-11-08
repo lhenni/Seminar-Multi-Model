@@ -1,0 +1,2 @@
+Probably bidirectional focus: 
+# Behavioral consistency checking for component-based software development using the KobrA approach 

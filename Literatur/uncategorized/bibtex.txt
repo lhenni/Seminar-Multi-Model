@@ -1,0 +1,86 @@
+@InProceedings{10.1007/978-3-319-61473-1_3,
+author="Trollmann, Frank
+and Albayrak, Sahin",
+editor="Guerra, Esther
+and van den Brand, Mark",
+title="Decision Points for Non-determinism in Concurrent Model Synchronization with Triple Graph Grammars",
+booktitle="Theory and Practice of Model Transformation",
+year="2017",
+publisher="Springer International Publishing",
+address="Cham",
+pages="35--50",
+abstract="Model synchronization is one of the core activities in model driven engineering. One of the challenges is non-determinism when multiple valid solutions exist. This is exasperated in triple graph based approaches, where additional non-determinism may arise from the alignment of the synchronized changes and the grammar. Non-determinism is often the result of multiple decision points during the synchronization process. Handling these decisions where they occur can reduce the overall complexity of dealing with non-determinism. In this paper we analyse a triple graph based synchronization approach to identify these decisions, extend the approach to clearly separate them and discuss the relation to formal properties of model synchronization.",
+isbn="978-3-319-61473-1"
+}
+
+@InProceedings{10.1007/978-3-319-33410-3_23,
+author="Boubakir, Mohammed
+and Chaoui, Allaoua",
+editor="Chikhi, Salim
+and Amine, Abdelmalek
+and Chaoui, Allaoua
+and Kholladi, Mohamed Khireddine
+and Saidouni, Djamel Eddine",
+title="A Pairwise Approach for Model Merging",
+booktitle="Modelling and Implementation of Complex Systems",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="327--340",
+abstract="There are several software engineering activities that require merging a set of models to produce a single one. In practice, models are often merged in a pairwise way, without considering the order in which models are combined. In this case, the quality of the results is not always guaranteed as it depends on the order of merging. The approach presented in this paper aims to improve the results, by considering the order of merging. It involves an iterative process, which is repeated until merging all models. In each iteration, we first compare the set of input models to measure the similarity degree of each pair of them. Then we combine a subset of these pairs of models, such that the sum of their similarity degrees is maximal.",
+isbn="978-3-319-33410-3"
+}
+
+R. G. Mohammadi and A. A. Barforoush, "Enforcing component dependency in UML deployment diagram for cloud applications," 7'th International Symposium on Telecommunications (IST'2014), Tehran, 2014, pp. 412-417.
+doi: 10.1109/ISTEL.2014.7000739
+keywords: {cloud computing;directed graphs;object-oriented programming;Unified Modeling Language;component dependency;UML deployment diagram;cloud applications;software components;modeling languages;UML component diagram;component dependencies;directed graphs;dependency enforcement;graph transformation;VIATRA2 model transformation framework;Unified modeling language;Computational modeling;Complexity theory;Computers;Software systems;Conferences;cloud application;UML;component diagram;deployment diagram;dependency enforcement},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7000739&isnumber=7000650
+
+
+@InProceedings{10.1007/3-540-57209-0_7,
+author="Finkelstein, A.
+and Gabbay, D.
+and Hunter, A.
+and Kramer, J.
+and Nuseibeh, B.",
+editor="Sommerville, Ian
+and Paul, Manfred",
+title="Inconsistency handling in multi-perspective specifications",
+booktitle="Software Engineering --- ESEC '93",
+year="1993",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="84--99",
+abstract="The development of most large and complex systems necessarily involves many people --- each with their own perspectives on the system defined by their knowledge, responsibilities, and commitments. To address this we have advocated distributed development of specifications from multiple perspectives. However, this leads to problems of identifying and handling inconsistencies between such perspectives. Maintaining absolute consistency is not always possible. Often this is not even desirable since this can unnecessarily constrain the development process, and can lead to the loss of important information. Indeed since the real-world forces us to work with inconsistencies, we should formalise some of the usually informal or extra-logical ways of responding to them. This is not necessarily done by eradicating inconsistencies but rather by supplying logical rules specifying how we should act on them. To achieve this, we combine two lines of existing research: the Viewpoints framework for perspective development, interaction and organisation, and a logic-based approach to inconsistency handling. This paper presents our technique for inconsistency handling in the Viewpoints framework by using simple examples.",
+isbn="978-3-540-47972-7"
+}
+
+@inproceedings{Golra:2016:AMH:2892664.2892701,
+ author = {Golra, Fahad R. and Beugnard, Antoine and Dagnat, Fabien and Guerin, Sylvain and Guychard, Christophe},
+ title = {Addressing Modularity for Heterogeneous Multi-model Systems Using Model Federation},
+ booktitle = {Companion Proceedings of the 15th International Conference on Modularity},
+ series = {MODULARITY Companion 2016},
+ year = {2016},
+ isbn = {978-1-4503-4033-5},
+ location = {M\&\#225;laga, Spain},
+ pages = {206--211},
+ numpages = {6},
+ url = {http://doi.acm.org/10.1145/2892664.2892701},
+ doi = {10.1145/2892664.2892701},
+ acmid = {2892701},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Abstraction, Model Driven Engineering, Model Federation, Modularity, Multi-model systems},
+}
+
+@conference{enase18,
+author={Mahmoud El Hamlaoui and Mahmoud Nassar and Saloua Bennani and Sophie Ebersold and Bernard Coulette},
+title={A MDE Approach for Heterogeneous Models Consistency},
+booktitle={Proceedings of the 13th International Conference on Evaluation of Novel Approaches to Software Engineering - Volume 1: ENASE,},
+year={2018},
+pages={180-191},
+publisher={SciTePress},
+organization={INSTICC},
+doi={10.5220/0006774101800191},
+isbn={978-989-758-300-1},
+}

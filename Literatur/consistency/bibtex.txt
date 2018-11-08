@@ -1,0 +1,14 @@
+@article{NUSEIBEH2001171,
+title = "Making inconsistency respectable in software development",
+journal = "Journal of Systems and Software",
+volume = "58",
+number = "2",
+pages = "171 - 180",
+year = "2001",
+issn = "0164-1212",
+doi = "https://doi.org/10.1016/S0164-1212(01)00036-X",
+url = "http://www.sciencedirect.com/science/article/pii/S016412120100036X",
+author = "Bashar Nuseibeh and Steve Easterbrook and Alessandra Russo",
+keywords = "Software specification, Requirements engineering, Inconsistency management, Inconsistency handling, Conflict",
+abstract = "The development of software systems inevitably involves the detection and handling of inconsistencies. These inconsistencies can arise in system requirements, design specifications and, quite often, in the descriptions that form the final implemented software product. A large proportion of software engineering research has been devoted to consistency maintenance, or geared towards eradicating inconsistencies as soon as they are detected. Software practitioners, on the other hand, live with inconsistency as a matter of course. Depending on the nature of an inconsistency, its causes and its impact, they sometimes choose to tolerate its presence, rather than resolve it immediately, if at all. This paper argues for “making inconsistency respectable” [A phrase first used by D. Gabbay and A. Hunter (in: Proceedings of Fundamentals of Artificial Intelligence Research'91, Springer, Berlin, p. 19; in: Symbolic and Quantitative Approaches to Reasoning and Uncertainty, Lecture Notes in Computer Science, Springer, Berlin, 1992, p. 129) to describe the same sentiments that motivated our work.] – sometimes avoided or ignored, but more often used as a focus for learning and as a trigger for further (constructive) development actions. The paper presents a characterization of inconsistency in software development and a framework for managing it in this context. It draws upon practical experiences of dealing with inconsistency in large-scale software development projects and relates some lessons learned from these experiences."
+}

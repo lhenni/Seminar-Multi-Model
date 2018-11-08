@@ -1,0 +1,15 @@
+## unrelated literature
+
+# 2017_Kretschmer_From Abstract to Concrete Repairs of Model
+
+* concerned with inner-model inconsistencies
+
+# 2017_Mustafa_The Need for Traceability in Heterogeneous Systems
+
+* concerned with traceability rather than fixing inconsistencies
+
+# 2018 Kanagasabai Towards Online Collaborative Multi-view Modelling
+* https://link.springer.com/chapter/10.1007/978-3-030-01042-3_12
+* concerned with concurrent model changes (across inter-dependent views) of multiple users
+* 'easy' solution: revert to consistent state if 2 or more edits conflict
+* consistency: the same element isn't edited by different users at the same time in a conflicting way (possibly in different views containing the element)

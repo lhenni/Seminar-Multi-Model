@@ -1,0 +1,57 @@
+@InProceedings{10.1007/11880240_38,
+author="Giese, Holger
+and Wagner, Robert",
+editor="Nierstrasz, Oscar
+and Whittle, Jon
+and Harel, David
+and Reggio, Gianna",
+title="Incremental Model Synchronization with Triple Graph Grammars",
+booktitle="Model Driven Engineering Languages and Systems",
+year="2006",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="543--557",
+abstract="The advent of model-driven software development has put model transformations into focus. In practice, model transformations are expected to be applicable in different stages of a development process and help to consistently propagate changes between the different involved models which we refer to as model synchronization. However, most approaches do not fully support the requirements for model synchronization today and focus only on classical one-way batch-oriented transformations. In this paper, we present our approach for an incremental model transformation which supports model synchronization. Our approach employs the visual, formal, and bidirectional transformation technique of triple graph grammars. Using this declarative specification formalism, we focus on the efficient execution of the transformation rules and present our approach to achieve an incremental model transformation for synchronization purposes. We present an evaluation of our approach and demonstrate that due to the speedup for the incremental processing in the average case even larger models can be tackled.",
+isbn="978-3-540-45773-2"
+}
+
+@InProceedings{10.1007/978-3-642-28872-2_13,
+author="Hermann, Frank
+and Ehrig, Hartmut
+and Ermel, Claudia
+and Orejas, Fernando",
+editor="de Lara, Juan
+and Zisman, Andrea",
+title="Concurrent Model Synchronization with Conflict Resolution Based on Triple Graph Grammars",
+booktitle="Fundamental Approaches to Software Engineering",
+year="2012",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="178--193",
+abstract="Triple graph grammars (TGGs) have been used successfully to analyse correctness of bidirectional model transformations. Recently, also a corresponding formal approach to model synchronization has been presented, where updates on a given domain (either source or target) can be correctly (forward or backward) propagated to the other model. However, a corresponding formal approach of concurrent model synchronization, where a source and a target modification have to be synchronized simultaneously, has not yet been presented and analysed. This paper closes this gap taking into account that the given and propagated source or target model modifications are in conflict with each other. Our conflict resolution strategy is semi-automatic, where a formal resolution strategy -- known from previous work -- can be combined with a user-specific strategy.",
+isbn="978-3-642-28872-2"
+}
+
+2013_Orejas_On Propagation-Based Concurrent Model Synchronization:
+http://dx.doi.org/10.14279/tuj.eceasst.57.871
+
+http://tuprints.ulb.tu-darmstadt.de/7426/
+
+@inproceedings{Weidmann:2018:TCM:3270112.3275339,
+ author = {Weidmann, Nils},
+ title = {Tolerant Consistency Management in Model-driven Engineering},
+ booktitle = {Proceedings of the 21st ACM/IEEE International Conference on Model Driven Engineering Languages and Systems: Companion Proceedings},
+ series = {MODELS '18},
+ year = {2018},
+ isbn = {978-1-4503-5965-8},
+ location = {Copenhagen, Denmark},
+ pages = {192--197},
+ numpages = {6},
+ url = {http://doi.acm.org/10.1145/3270112.3275339},
+ doi = {10.1145/3270112.3275339},
+ acmid = {3275339},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bidirectional transformation, consistency, eclipse plug-in development, model-driven engineering, tolerance},
+} 
+

@@ -1,0 +1,92 @@
+## Related:
+
+# 2008_Denton_Chapter_NAOMIAnExperimentalPlatformFor
+
+* Model-driven, view-based design
+* Allow different domain specific modelling languages to be used for different viewtypes / different system aspects
+  * different meta models, no restrictions on the used languages / tools
+* List of multi-model challenges:
+  1. Capturing Multi-model Interdependencies
+  2. Maintaining Multi-model Consistency
+  3. Semantic Precision of Inter-model Data Exchange
+* Derives a list of requirements for the multi-model system:
+  1. The system must allow data exchange between models.
+  2. The system must support a means of specifying interdependencies between models.
+  3. The system must support a means of propagating changes from one model to all dependent models.
+  4. The system must be able to determine an ordering for propagation of model changes consistent with interdependencies among models.
+  5. The system must be able to identify when multi-models are consistent.
+  6. The system must support simultaneous updates of multiple models.
+  7. The system must be capable of supporting all of the above independently of modeling language or modeling tool.
+  8. The system must allow for the set of models and tools to vary over time.
+  9. The system must allow for multiple versions of models (and tools).
+  10. The system must support the ability to rollback to earlier versions of the models and tools.
+  11. The system must allow for transformations of data during inter-model exchanges.
+  12. The system must assure and enforce semantic correctness in inter-model data exchanges. (not addressed in this paper, maybe in future work)
+  
+  * Requirement 1 follows from Challenges 1 and 3
+  * Requirement 2 follows from Challenge 1
+  * Requirements 3-11 follow from Challenge 2
+  * Requirement 12 follows from Challenge 3.
+
+* Presents experimental platform for multi-model integration.
+  * It allows modelers to specify the models used to describe a system, along with their inter-dependencies, and uses this information to propagate changes to models.
+  * The Execution Automation Engine determines an ordering of execution based on dependencies in the multi-model and orchestrates execution of the multi-model.
+  * Other functionality: model data exchange, constraint management, change propagation (!), model execution, and version management (allows rollbacks)
+  
+* Model = (Language, Inputs, Outputs) <==================
+  * Each attribute is always only owned by a single model (used for synchronization)
+  * Limitation: "There are cases however, where specification models only share parts of their specification" [..] (p. 5)
+* Attributes (inputs, outputs) can have constraints
+* Modelers work on local copies ("sandboxes"): allows concurrent changes to the (central) multi-model from other modelers
+
+* Change propagation (p. 6):
+  * controlled exchange of attributes from output of one model to the input of another model
+  * forms graph of dependencies
+  * Order of model execution (updating): depth first search -> leaves first, then upwards from there
+* Problems: Sometimes unclear order, some models may need to be executed multiple times until attributes fulfill constraints, Cycles (strongly connected models)
+  -> Requires expert input in those cases
+  * Allows defining rules: Mapping from match expression (sequence of models) to set of actions
+* Assumption: Individual models are consistent.
+* Here: Interested in whether composition of the constituent models is consistent.
+* Categorization of consistency:
+  * Attribute Consistency: All attributes have been updated by their owner model since the last time their owner model’s input attributes changed.
+  * Constraint Consistency: The current values of all attributes do not violate any model specific constraints.
+  * Attribute-Model Consistency: The modification times (time of last model edit) of all models are earlier than the modification times of their output attributes.
+  * NAOMI Consistency: Multi-models that have the properties of attribute consistency, constraint consistency, and attribute-model consistency are defined as NAOMI consistent.
+* Connectors: Per language/model type
+* Warning to user if inconsistencies are detected <========================
+
+# 2008_Kolovos_Detecting and Repairing Inconsistencies Across Heterogeneous Models
+
+* classification of types of relationships between models
+* classification of inconsistencies for those relationships
+* set of requirements for a generic inconsistency detection and reconciliation mechanism
+* OCL-like mechanisms for cross-model inconsistency detection -> Epsilon Object Language (EOL)
+  * extends OCL, for example for multiple model access, model modification capabilities, conventional programming constructs, ..
+  * meant as core language for task-specific languages built on top, such as for: transformation, validation, merging, comparison and text-generation
+* paper focuses on Epsilon Validation Language (EVL): addresses the problem of model validation (analytic approach instead of constructive?)
+  * express constraints over multiple models concurrently
+  * but: also able to execute user-defined 'fixes' if an inconsistency is detected <=================
+    * user-defined: no guarantee that they actually repair inconsistencies, developer is responsible
+
+# 2017_Macedo_A Feature-Based Classification of Model Repair Approaches
+
+* classification of consistency repair mechanisms
+* Chapter 3.2.5: References to various multi-model consistency repair techniques
+  * potentially no focusing on only two model instances: [7], [11], [14], [37], [43], [47], [50], [52], [53], [55], [60], [67], [74], [75], [82].
+  * [7] S. Easterbrook and B. Nuseibeh, “Using viewpoints for inconsistency management,” Softw. Eng. J., vol. 11, no. 1, pp. 31–43, 1996.
+  * [11] A. Finkelstein, D. M. Gabbay, A. Hunter, J. Kramer, and B. Nuseibeh, “Inconsistency handling in multiperspective specifications,” IEEE Trans. Softw. Eng., vol. 20, no. 8, pp. 569–578, Aug. 1994.
+  * [14] D. S. Kolovos, R. F. Paige, and F. Polack, “Detecting and repairing inconsistencies across heterogeneous models,” in Proc. 1st Int. Conf. Softw. Testing Verification Validation, 2008, pp. 356–364.
+  * [37] R. Eramo, I. Malavolta, H. Muccini, P. Pelliccione, and A. Pierantonio, “A model-driven approach to automate the propagation of changes among architecture description languages,” Softw. Syst. Model., vol. 11, no. 1, pp. 29–53, 2012.
+  * [43] R. V. D. Straeten, T. Mens, J. Simmonds, and V. Jonckers, “Using description logic to maintain consistency between UML models,” in Proc. 6th Int. Conf. Unified Model. Language Model. Languages Appl., 2003, pp. 326–340.
+  * [47] J. Scheffczyk, U. M. Borghoff, A. Birk, and J. Siedersleben, “Pragmatic consistency management in industrial requirements specifications,” in Proc. 3rd IEEE Int. Conf. Softw. Eng. Formal Methods., 2005, pp. 272–281.
+  * [50] J. C. Grundy, J. G. Hosking, and W. B. Mugridge, “Inconsistency management for multiple-view software development environments,” IEEE Trans. Softw. Eng., vol. 24, no. 11, pp. 960–981, Nov. 1998.
+  * [52] J. M. K€uster and K. Ryndina, “Improving inconsistency resolution with side-effect evaluation and costs,” in Proc. 10th Int. Conf. Model Driven Eng. Languages Syst., 2007, pp. 136–150.
+  * [53] W. Liu, S. Easterbrook, and J. Mylopoulos, “Rule-based detection of inconsistency in UML models,” in Proc. Workshop Consistency Problems UML-Based Softw. Develop., 2002, pp. 106–123.
+  * [55] H. Song, et al., “Instant and incremental QVT transformation for runtime models,” in Proc. 14th Int. Conf. Model Driven Eng. Languages Syst., 2011, pp. 273–288.
+  * [60] N. Macedo, A. Cunha, and H. Pacheco, “Towards a framework for multidirectional model transformations,” in Proc. Workshops EDBT/ICDT Joint Conf., 2014, pp. 71–74.
+  * [67] M. Goedicke, T. Meyer, and G. Taentzer, “ViewPoint-oriented software development by distributed graph transformation: Towards a basis for living with inconsistencies,” in Proc. 4th IEEE Int. Symp. Requirements Eng., 1999, pp. 92–99.
+  * [74] A. K€onigs and A. Sch€urr, “MDI: A rule-based multi-document and tool integration approach,” Softw. Syst. Model., vol. 5, no. 4, pp. 349–368, 2006.
+  * [75] A.-T. K€ortgen, “New strategies to resolve inconsistencies between models of decoupled tools,” in Proc. 3rd Workshop Living Inconsistencies Softw. Develop., 2010, pp. 21–31.
+  * [82] S. Mafazi, W. Mayer, and M. Stumptner, “Conflict resolution for on-the-fly change propagation in business processes,” in Proc. 10th Asia-Pacific Conf. Conceptual Model., 2014, pp. 39–48.
+  

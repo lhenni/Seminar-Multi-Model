@@ -1,0 +1,7 @@
+## (Maybe) Related but different:
+
+# 2002_Xu_Multi-model technology and its application in the integration of CADCAMCAE
+
+* Integration of lower-level models (CAD) into higher-level models (ie. product).
+* Consistency = Updating the integrated higher-level model after changes to the lower-level model
+

@@ -1,0 +1,4 @@
+# 2017_Kramer_Specification Languages for Preserving Consistency between Models of Different Languages
+
+* Challenges to Consistency Preservation
+* mostly concerning bidirectional consistency preservation

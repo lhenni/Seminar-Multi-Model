@@ -1,0 +1,4 @@
+X. Blanc, I. Mounier, A. Mougenot and T. Mens, "Detecting model inconsistency through operation-based model construction," 2008 ACM/IEEE 30th International Conference on Software Engineering, Leipzig, 2008, pp. 511-520.
+doi: 10.1145/1368088.1368158
+keywords: {formal specification;formal verification;PROLOG;Unified Modeling Language;model inconsistency;operation-based model construction;industrial software system;system specification;meta-model independent;Prolog engine;UML 2.1 models;requirement models;UML-based modelling environment;rational software architect;Unified Modeling Language;Computer industry;Software systems;Unified modeling language;Buildings;Large-scale systems;Engines;Permission;Mars;Inference algorithms;Stress;consistency;logic;meta-model;model},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4814162&isnumber=4814110

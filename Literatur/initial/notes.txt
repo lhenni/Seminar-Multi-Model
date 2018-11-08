@@ -1,0 +1,387 @@
+## Initial literature:
+
+# 2008_Eramo_Change Management in Multi-Viewpoint System Using ASP
+
+* Model-driven, view-based design
+* Correspondence (meta)model
+  * Relationships between elements across models
+  * Express constraints
+  * All correspondences conform to single correspondence metamodell
+* Classification of model (and correspondance) changes, and their effects (p. 3):
+  * Additive
+  * Subtractive
+  * Updative
+* Problems:
+  * correspondences may not provide all the information needed to implement the changes required in other views
+    * Ex.: Correspondences define constraints -> system is able to enforce changes in related views
+	* But: Correspondences may not always define precise constraints, but only 'traces':
+	  * System can only detect changes and present them to system designer, but cannot enforce them itself
+  * Ripple effect and cycles: change may recursively affect models, even the same models elements along different paths, may therefore lead to inconsistencies
+  * Concurrent changes to different views (by different people on the team) may lead to conflicts -> needs to be presented to user to decide
+    * And when decided: Change may cause further changes due to its propagation
+* ASP mechanisms are able to deal with scenarios in which views have to be analyzed among them in order to detect dependencies and solve inconsistences by selecting combination of admissible (valid) solutions
+* ASP = Answer Set Programming
+  * paradigm of logic programming; declarative method that uses logic and proof procedures to define and resolve problems
+  * Program consists of: set of rules and axioms
+  * Logic programming system: computes consequences of the axioms and rules in order to answer a query
+  * represent each consistent choice by means of an answer set
+  * program may have one, one, or several answer sets
+  * allows managing cyclic negative dependencies that represent incomplete knowledge or denote the possibility of different alternatives
+    * possibility of dealing with non-deterministic derivations which represent alternative solutions to a given problem
+* Representing viewpoints and correspondences (encodings) ch. 4)
+  * models / metamodels = graphs: entities (nodes), relations/associations between entities (edges), properties (characterize entities)
+  * encoding correspondences: similar
+  * allows representation of any model and constraints as nodes, edges and properties
+* Change Management:
+  1. Change identification: Detect changes in views and correspondences, uses existing model-difference techniques, gives difference model
+  2. Change classification and cascading: Classification (see above) of changes, identify potential effects, iterative until set of affected elements and correspondences is stable
+  3. Change commitment and propagation: Present user the all affected model elements and their possible changes (valid configurations) for deciding, once one particular change is committed by user the changes are recalculated (removes alternatives ruled out by the user's decision), continue until no affected elements remaining
+* An advantage of ASP over other alternative formalisms is related to its ability to deal with sets of inter-related models.
+* Furthermore, ASP can help dealing with several problems which need to be handled in a consistent way. For example, if an action causes an inconsistency in a connected view, the resolution may neglect relations or constraints between such view and other views.
+
+# 2010_Malavolta_Providing_Architectural_Languages_and_Tools_Interoperability_through_Model_Transformation_Technologies
+
+* Aim: Automatically transform SW architecture specifications from source ADL (architecture description language) to other target ADLs
+
+* model-driven engineers: provide a architectural language specification in form of metamodel or UML profile; and define a set of mappings to semantically relate architectural concepts in MM1 with the equivalent elements in MM2
+* software architects: create models using their preferred ADL / UML-based notation
+* DUALLY: automatic generation of model-to-model-transformations to enable translating models between languages
+  * ATL (Atlas Transformation Language, QVT-like)
+* eclipse plugin, metamodels in ecore
+* A_0: semantic core set of modelling elements, all semantic mappings go through A_0, extensibility mechanisms to augment the core with domain-specific and new concepts
+  * reduces the amount of connections of languages needed (easy adding more languages)
+  * as general as possible to be able to represent any ADL
+  * complete overview over A_0 metamodel elements: p. 4-6
+  * Extensibility Mechanisms via inheritance:
+    * A_0 comes with general abstract classes for expected types of extensions
+    * natively: business, behavioral aspects, domain modeling extensions
+	* element annotations, element specializations, addition of elements, addition of composition and association relations between elements
+* Model Transformations:
+  * links between metamodels (to/from A_0) = "weaving models"; conform to weaving metamodel (defined by DUALLY)
+  * defined manually or via scripting languages
+  * model-to-model transofmrations are automatically obtained via higher-order transformations
+* goal: guarantee correctness of transformations:
+  * syntactic correctness: well-formed source model given, guaranteed well-formed target model (check if model conforms to its metamodel)
+  * semantic correctness:
+    * Round-Trip Engineering (RTE): source model -> target model -> changes -> back to source model
+	* problem: transformations neither total nor injective: inconsistencies due to some source or target elements having no correspondences in the other model
+	* definitions with the aim of defining properties that hold also for transformations that are neither total nor injective (p. 7-8)
+	* DUALLY: preserves features that would be lost by transformation; using those when returning back to source model (no 'loss in translation')
+       * as default fallback, if transformations can not be guaranteed to be total and bijective
+	   * Stores and later re-adds 'lost elements': MLost model, with references to the original source elements (conforms to (simple) MMLost metamodel: elements, attributes, references)
+	* user is prompted and can decide whether to not consider/create the lost-in-translation model
+* Provides an Editor to define weaving models (correspondences between models, ie. to/from A_0)
+* Reuses tools/editors related to EMF
+
+# 2014_Macedo_Towards a framework for multi-directional model transformations
+
+* QVT-R limitations in multidirectional case
+* examples: feature model <-> k configurations
+  * the features common to all configurations are mandatory feature in the feature model
+  * all configurations each contain all mandatory features of the feature model (cannot be express in QVT-R)
+  * note: "this example could also be expressed as bidirectional transformation between FM and tuple of CFs, but in general the n models my be of different nature. Moreover, the standard checking semantics could not be reproduced under such view."
+* QVT-R relations are not suitable for expressing many transformations of interest, namely those where relationships are not symmetric.
+  * In fact, this is already a problem in the bidirectional setting (for example, how to express a plain subset relationship?)
+  * but is aggravated in the multidirectional setting due to the explosion of possible dependencies between domains
+* extension proposal that enables the specification of interesting multidirectional transformations, and discuss how to infer different kinds of consistency-restoring transformations from the same multidirectional specfication
+  * control the extent of the universal quantifications (range only over the feature model in the configuration relations)
+  * via language of dependencies between domains in order to express the desired directionality of the checking semantics
+  * form: S -> T, with S is sub set of the models involved in the relation, and T is a single model involved in the relation which is not part of S
+    * example: mandatory features dependencies: {CF1,CF2 -> FM; FM -> CF1; FM -> CF2}
+	  * quantifications over CF1 and CF2 to determine mandatory features required in FM
+	  * quant. over mandatory feature in FM to determine required features in CF1
+	  * same for CF2
+* enforcement:
+  * reference to paper that presents a transformation that restores consistency between 2 models as close as possible (according to a distance metric)
+  * this could be applied in the multidirectional case as well
+    * only requires: definition of a consistency relation and a suitable distance metric for the target domain
+	* thus extending it for the multidirectional scenario requires only the definition of suitable distances for the selected output
+	* single output mode (CFs->FM): trivial
+	* FM->CFs: combined distance of the target models
+	  * means that changes in all the models have the same weight, what may not be desirable -> left for future work
+
+# 2015_Trollmann_Extending Model to Model Transformation Results from Triple Graph
+
+* Triple graph grammars / rules
+* derived rules: source, target, forward, backward
+* transformation: find sequence of triple rules, such that applying source rules of the sequence result in the source mode
+  * target can be derived by applying forward rules of the sequence
+  * if this is possible: sequence is called "match consistent"
+    * theorem 1: original transformation is equivalent to source + forward rules
+	* theorem 2: match consistent sequence with target and backward rules is equivalent to the match consistent rule with source and forward rules
+* extension for multi-model case: generalise derived rules, match consistent sequences and those 2 theorems
+  * "graph diagram grammars"
+  * able to represent multiple models and relations (instead of 2 models and 1 relation)
+  * "model and transformation rules" are generalisation of source and forward rules
+  * theorem 1 (decomposition and composition of transformation sequences)
+  * theorem 2 (Equivalence of Graph Diagram Transformation -Sequences)
+  * proofs, m-adhesiveness
+
+* mainly theoretical basis, and formalism for representation?
+* consistency = can be created by grammar
+
+## References:
+* Distributed graphs: might be an alternative, but further theoretical results might be required [3]
+* model synchronization based on TGG: it might be able to generalise these based on the work of this paper
+
+# 2016_Trollmann_Extending Model Synchronization Results from Triple Graph Grammars
+
+* TGGs for model synchronization, but generalized to more than 2 models
+* For the purpose of model synchronization a TGG defines a consistency relation Rel where all triples that can be produced via the grammar are considered consistent
+* The purpose of model synchronization is to synchronize changes to derive a consistent triple. These changes are called deltas and contain creation and deletion of elements.
+* concurrent synchronization problem: both models may have changes (delta source, delta target)
+  * multi-model case: all involved models can have changes
+
+* potential multi-model issues:
+  * a source model that is consistent in one TGG is not necessarily consistent in another TGG.
+    * Thus, synchronization along either TGG can cause inconsistency in the other.
+	* For the synchronization to terminate it has to be guaranteed that the source model reaches a stable state so that no further synchronization is necessary.
+	* Since both TGGs operate on only two models this has to be guaranteed externally and may become complex, e.g., for a large graph of relations containing circles.
+	* Graph diagrams can specify the consistency of all models at the same time and enable the concurrent synchronization among multiple relations internally.
+
+* asymmetric synchronization: one model is an abstraction of the other one
+* symmetric synchronization: both models can contain information not reflected in the other model
+  * harder, since additional information
+  * approach of this paper deals with symmetric case for multiple models
+* uses change representation, instead of using result of change, since the same result can be achieved in multiple ways
+
+* model-incremental: avoid recreating the complete target model; not effort-incremental: depend on the size of changes and not on the size of the models
+  * "Giese et al. achieve effort-incrementality via assumptions on TGG rules that enable reasoning about rule application based on the synchronized changes [5]. In principle the restriction and reasoning could also be generalized to graph diagrams."
+
+* synchronization operation: derives deltas that lead to a consistent graph diagram
+  * note about example: changes are independent of each other (no conflicts). How relevant for this approach to work?
+    * Page 11: "given a graph diagram, a model node in this diagram and a delta on this model node, produces another delta for the same model node.
+	            The operation alters the original delta to lead to a consistent version of the changed model.
+				Consistent means, that it can be created via the graph diagram grammar. [..] and thus find a maximally consistent submodel by deleting all elements not marked [..]."
+	* "These deltas enable to detect and resolve conflicts via operation [..]"
+	* maximally consistent: allows reverting/adapting the 'intended change', in order to resolve conflicts? -> yes
+	  * feedback for user? can the user be sure the result is 'intended'? -> principally possible with custom conflict resolution implementation
+	  * "The reuse of the operation Res guarantees that alternative or extended implementations of conflict resolution in TGGs can also be applied in our approach."
+	* "The operation CSynch is nondeterministic and contains all possible synchronization orders. They all lead to consistent diagrams.
+	   It is the role of synchronization mechanisms implemented on top of CSynch to select a reasonable option."
+* outcome depends on order in which to synchronize deltas? -> yes
+  * non-deterministic!
+  * but consistent results regardless
+  * same in other sync. approaches; there are conditions in which order doesn't matter (reference [22] on page 14), but may be too restrictive in general
+  * "In the scope of a specific modelling framework it is often possible to select a specific order or to decide on one of the possible results."
+
+* synchronization algorithm: page 12
+  * given: models (in order in which to synchronize deltas), deltas, initial graph diagram
+  * for each model:
+    * create consistent delta for this model and its delta (consistent = can be created via graph diagram rules)
+	* propagate the consistent delta: produces a new graph diagram and new deltas for all nodes (enable to detect and resolve conflicts)
+	  * merge previous and new deltas. At this point alternative conflict-resolution implementations can be used
+  
+* consistency = can be created by grammar
+  * other consistency requirements are observed in context of other approaches based on TGGs
+  * left to future work to look into those (may require adaptations or different sync. approach)
+
+* "Another possible extension involves the generalization of synchronized deltas to relations. This might be interesting in cases where a developer edits a complete subnet of models instead of an individual model."
+  
+# 2017_Gleitze_A Declarative Language for Preserving Consistency of Multiple
+
+* new programming language (Commonalities language) to create transformations for consistency preservation of more than two models
+* uses an intermediate metamodel: scalable, modular
+  * new: definition of the metamodel classes/attributes/references together with the transformations in the same language
+* uses another language for its execution: reactions language (unidirectional, binary)
+* bidirectional mappings from/to intermediate metamodel: avoids dupkication
+* declarative: easy to understand
+* prototype implementation for Vitruvius framework
+
+* start by looking at dfferent possibilities of how consistency of multiple models can be preserved using only binary transformations
+* advantages of introducing an intermediate metamodel
+----
+* ch. 2.4: Model Consistency and Consistency Preservation
+  * in terms of semantic overlap
+  * spans multiple models (often different metamodels)
+  * "there is no inherent or unique definition of when a set of models is consistent, although there may be an intuitive one. Consistency is relative to a consistency specification [Kra17, p. 38]"
+  * paradigm: "Realising consistency preservation through transformations also establishes a consistency specification"
+    * "Instead of creating any form of explicit consistency specification for the models, developers create transformations that express their implicit understanding of how consistent models should look like."
+* ch. 2.6: View-Based Modelling
+  * Orthographic Software Modelling:
+    * SUM: one underlying model with all information, no semantic overlap, ch. 2.4.1: no inconsistencies possible
+	* might however not always be practical: see ch. 2.6.2
+  * ch. 2.6.2: Vitruvius framework
+    * VSUM: formed by multiple models
+	  * modular: easy extendable; able to use existing metamodels and tools/editors for them
+	  * consequence: semantic overlap possible -> requires consistency preservation
+	* views; change-driven; transformations react to changed element type and type of change
+	* keeps track of correspondences between model elements
+---
+* "We will first explore solutions that only use binary transformations and then explain what this thesis’ chosen solution is and why it was selected."
+* "We will assume a set of models, of which any pair shares semantic overlap"
+* "assume that only one model is edited before transformations are executed"
+  * "transformations will always start from only one model, and all other models may be modified"
+  * "this assumption is not realistic however", but avoids various issues as discussed in stevens2017
+* p. 15: "We assume, though, that the models can be kept consistent using only binary transformations. This might not always be the case in reality [Ste17], but that is discussed separately in section 8.4."
+  * reuse existing tools/languages (reactions language)
+  * introduces complications in practice; 3 solutions are presented and compared
+    * Fully Connected With Bidirectional Transformations
+	  * "duplication of similar logic means that changes to transformations requires looking at all other transformations as well"
+	  * "difficulty to verify and maintain"
+	  * lots of effort for creating all the transformations
+    * Spanning Tree with Bidirectional Transformations
+	  * less transformations required
+	  * transitive propagation/execution required
+	  * no cycles -> unique path of transformations -> easier to verify for developer
+	  * harder to determine impact of changes if the transformation path is long
+	  * ...
+	* Circle With Unidirectional Transformations
+	  * ..
+	* Other solutions
+	  * ..
+	  * "Overall, it seems like restricting ourselves to using nothing more than binary transformations does not lead to satisfactory results."
+
+* Multiary Consistency Preservation Using an Intermediate Model
+  * intermediate = model of semantic overlap
+  * transformation graph is a tree with intermediate model as root and all other models as direct leaves
+  * implicitly defined intermediate metamodel (by commonalities language)
+...
+	
+	
+# 2017_Stevens_Bidirectional_Transformations_in_the_Large
+
+* define multiary consistency relation in terms of binary consistency relations
+* how consistency restoration could be carried out in network of models with relationships between them
+* bidirectional transformation (bx): may in fact relate any number of models; it is a means of restoring consistency between them (also often called "model synchronization", but reserved to when both of two models are changed)
+  * may be used in several modes, e.g. to check whether models are consistent, or to hold a given collection of models fixed while restoring consistency by modifying the rest
+* most basic properties of bx:
+  * correctness: when a bx restores consistency, the resulting models are, indeed, consistent
+  * hippocraticness: if the models are already consistent, then restoring consistency changes nothing
+* MDSD: groups of experts, each working and developing with models adapted to their needs
+  * automatic transformation to deployed software
+  * n models (including deployed software system):
+    * n-ary consistency relation
+	* but unlikely to specify it as such, because to do so is tantamount to designing the complete software, and if we knew how to do that, we would not need the models in the first place
+	* more likely: network of bx (some bought off-the-shelf, some developed for the project), each relating some of the models
+* raised questions (not all fully covered by the paper): see p. 1
+  * limit notions of consistency?
+  * what does it mean to restore consistency for a collection of models connected by bx
+  * when and how can consistency be restored
+  * how flexible to varying the consistency restoration procedure? when guaranteed to get the same results, regardless of how we do it?
+  * what if consistency can not be fully restored before new changes begin to happen?
+
+* example for ternary consistency relationship: code <-> tests relation ship depends on safety model (that requires a certain test coverage)
+
+* practical reasons for considering consistency of models pairwise wherever possible:
+  * cognitively, it is hard enough to think about a binary consistency relation in order to specify it correctly
+  * problem: it is easy to construct examples where any pair from three models is consistent but the collection of three is not (there is one in Appendix A of [5] for example)
+  * binary consistency not expressiveness enough to express multiary consistency?
+    * in practical use of bx the bx developers have some flexibility in how to define the notion(s) of consistency, and may also have the option of adding additional models
+	
+* Definition: "binary definable relation": there exists an equivalent set of binary relations
+  * Not every relation is binary-definable: ternary counterexample (p.2): R= {(a,b,c'),(a,b',c),(a',b,c)}
+    * if binary-definable, then there would be R_AB, R_BC, R_AC with (a,b), (b,c), (a,c)
+	* then this would mean (a,b,c) element of R -> contradiction
+    * further example on p. 3: R(system , tests, safety-criticality) with 'a' is a system, 'b' is a test suite, 'c'/' c' ' determine safety-criticality (implies test-suite coverage)
+	  * R(a,b) = "a passes all tests in b"
+	  * we may have R(a,b,c'), but not R(a,b,c) if b does not cover enough of a in safety-critical case
+	  * but we may also have R(a',b,c) if for some other system a' the coverage of the same tests b is enough even in safety-critical case
+	  * and R(a,b',c), if a may can be sufficiently tested by some other test suite b'
+	  * since (a,b), (a,c) and (b,c) appear in the relevant binary relations, and they imply (a,b,c) in R -> R is not binary-definable
+	  
+* Example 2: feature model with mandatory features and configuration models (see 2014_Macedo_Towards a framework for multi-directional model transformations)
+  * Approach 1: add extra models
+    * idea originates from constraint satisfaction problem (CSP)
+	* constraint network, with variables and constraints that may involve more than 2 variables each, can be transformed into a equivalent network with additional variables that only uses binary constraints (models = variables; 2 standard ways to do the transformation)
+	* but: it does not follow that the bx problem is solved, for two reasons:
+	  1. it's often impractical or unhelpful to add the extra models: single multiary consistency relation would require a model set with all the correct tuples of all the original models
+	     * "it is illusory that this would help"
+		 * "On the other hand, it might be a practical way to avoid working with, say, ternary relations on closely related models."
+	  2. the aims of the two fields differ
+	     * bx: resolution based on consistency restoration functions of binary bx -> limits resolution possibilities
+		 * see later example 5
+  * Approach 2: vary the consistency definition
+    * the requirement to find a set of binary consistency relations such that every correct n-tuple arises from the conjunction of them may be too stringent. We might instead ask for a binary-implementable consistency relation
+	* Definition 3, p. 4: "binary-implemented"
+	* we allow the binary relations to forbid pairs of models, even though these pairs could, in fact, be completed to entirely correct system implementations
+	* "be on the safe side, because of not knowing what else is going on in the system"
+	* in the above example: use a relation between java system and test suites that insists on the coverage criterion and all tests passing, just in case the third model deems the system safety-critical
+	* problem: every R may be binary-implemented by some set of binary relations, and that not all sets of implementing binary relations are useful for development
+	  * indeed any multiary relation is implemented by any unsatisfiable set of binary relations!
+	  * how to limit it to 'useful' binary-implementations?
+	  * p. 5: see "hippocraticness failure"
+	  * decision: not start with multiary consistency relation and derive from it a set of binary consistency relations
+	    * but: trust that we can produce a sensible collection of binary consistency relations, which binary-define a good-enough closed multiary consistency relation
+------
+* remaining paper: concerned with how the consistency restoration functions of the binary bx can be used to restore consistency in a network of models related by such binary bx
+* ch. IV: HOW DO WE BEST MANAGE AND TOLERATE INCONSISTENCY?
+* Definitions: authority instance, resolution, resolvable, confluent (different resolution paths result in same outcome)
+
+* various properties and issue cases are presented
+  * TODO: look through this
+  * from conclusion:
+    * "our findings were mostly negative: this suggests that in practice, it will usually be necessary to manage the consistency restoration process, e.g. specify a resolution path not just an authority instance, rather than relying on confluence."
+    * "However, we provided an algorithm and positive results for special cases."
+
+* special cases with problems with consistency restoration in bx networks (p. 7)
+  * give up on allowing bx developers to specify how consistency is restored?
+    * only allow to express what consistency relation must hold, and then adapt, from the CSP community, techniques for restoring these constraints as necessary
+	* but: developers care about how consistency is restored
+	* and: simple notions of which restoration is best are not always correct
+* here: we will assume that consistency must be restored using the consistency restorers that are defined as parts of the binary bx that specify consistency
+--------
+
+* further reference: [16] "MDI: A rule-based multi-document and tool integration approach"
+  * multigraph grammars (MGGs): a variant of TGGs, extended to all graphs instead of 2
+  * MGG rules specify how all the graphs, including a single correspondence graph, evolve simultaneously
+  * "deemed impractical by the authors"
+  * derive binary operational rules from the MGG
+  * do not discuss, though, the semantic relationship between the derived rules and the original
+  * nor the issues that may arise from applying them over a network of models as we have considered here
+---
+* further reference: graph diagrams (see 2015_Trollmann_Extending Model to Model Transformation Results from Triple Graph)
+  * expressed in categorical terms
+  * "the authors point out that they have not yet addressed many of the matters that concern us here"
+---
+* [22] Pairwise model-merging of the most similar pair
+---
+* "Returning to the issue of tolerating inconsistency, we note that we have not addressed what happens if, while we are in the process of restoring consistency across a network, further changes to models are taking place"
+---
+* [1] A threedimensional taxonomy for bidirectional model synchronization
+  * TODO: look into it to determine if it contains useful ideas related to classification of multi-model consistency
+---
+* [19] "Supporting automatic model inconsistency fixing"
+  * A different approach, related to the CSP work, is to take a program repair view of consistency restoration
+  * Here constraints are expressed over all models, any of which may be modified; see for example [19]
+
+# 2018_Klare_ModelsDocSym2018_camera-ready
+
+* non-intrusive transformation interoperability
+* approach for decomposing consistency relations and concept metamodels that make relations explicit
+* benefit:
+  * independently developed binary transformations can be combined
+  * omitting interoperability issues without the necessity to know about each other, to achieve multi-model consistency
+---
+* declarative vs imperative: doesn't matter, "all problems apply to both approaches and only different roles have to deal with them"
+* "Although it is possible to combine binary transformations by transitively executing them, it is yet unclear what problems may arise from that, especially if each transformation is developed independently and treated as a black box"
+  * example given: ADL<->Java and ADL<->UML<->Java
+    * interoperability problem: Java class created twice: once by direct transformation, and once by transformations to and then from UML
+  * combining binary transformations leads to trade-off decisions
+    * example: ternary relation expressed either as 3 binary between all pairs, or via 2 binary relations and the third one being the combination of the two
+	  * first approach: redundancy in specification, since R3 has to be equal to R1+R2; consequently those transformations may be incompatible if not correctly defined
+	  * second approach: modularity is reduced (cannot use only ADL<->Java for specific system and omit UML) -> "specification trade-offs"
+* But: "there are reasons to adhere to binary transformations, and to research their combinability"
+  * reduced complexity for domain experts that create relations between domains
+* Contributions to research:
+  * Transformation interoperability:
+    * independently developed binary transformations must be combinable in a black box manner
+	* "interoperability problem"
+	* identify problems that can arise from that combination
+	* and develop a catalog of patters that can be followed by the transformation developer or language to achieve non-intrusive interoperability of binary transformations
+  * Decomposition of consistency relations:
+    * "specification trade-offs"
+	* classification of those challenges and investigate the influence of the way in which transformations are specified on them
+	* investigate how consistency relations can be decomposed into independent subsets, as this allows a partial optimization regarding those challenges
+  * Make common concepts explicit:
+    * metamodels represent same concept in different ways
+    * "specification trade-offs"
+	* make these common concepts explicit to improve comprehensibility of transformations and to improve their modular reuse
+--
+Related work:
+* Model consistency preservation, also referred to as "model repair" <======================+
+* 
+	
+
+---------------------------------------------------
+

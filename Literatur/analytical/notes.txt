@@ -1,0 +1,5 @@
+## analytical
+
+# 2008_Blanc_Detecting model inconsistency through operation-based model construction
+
+* detection of inconsistency based on elementary model construction steps

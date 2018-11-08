@@ -1,0 +1,17 @@
+# 2011_Weidmann_Business-Process-Change-Management
+
+* domain: business process change management
+  * multiple abstraction layers
+  (* similar to software development)
+* purpose: trace changes across multiple abstraction layers
+  * by keeping track of correspondences (traces), and change propagation / notification between neighboring layers (change queues)
+* classification of changes
+* only bidrectional considered? from one level to the level above/below
+  * what about propagation of changes from one model to n others?
+* only correspondence mappings support n:n type mappings
+
+
+# 2013_Orejas_On Propagation-Based Concurrent Model Synchronization
+
+* bidirectional case
+* classification of consistency properties

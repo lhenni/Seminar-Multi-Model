@@ -1,0 +1,22 @@
+## Uncategorized:
+
+# 2016_Boubakir_A Pairwise Approach for Model Merging
+* Probably unrelated
+* Referenced by 2017_Stevens_Bidirectional_Transformations_in_the_Large [22]
+
+# 2014_Mohammadi_Enforcing Component Dependency in UML
+
+* maybe only concerned with binary model transformations TODO: actually check
+
+# 1993_Finkelstein_Inconsistency Handling in Multi-Perspective Specifications
+
+# 2016_Golra_Addressing modularity for heterogeneous multi-model systems using model federation
+
+* Similar to Vitruvius? (virtual single underlying model)
+* ..
+
+# 2018_Hamlaoui_A MDE Approach for Heterogeneous Models Consistency
+
+* create single model by finding matches in partial models
+* ch.4: 7 step algorithm to restore consistency
+  * .. TODO

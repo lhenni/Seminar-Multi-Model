@@ -1,0 +1,39 @@
+@InProceedings{10.1007/978-3-540-87875-9_10,
+author="Denton, Trip
+and Jones, Edward
+and Srinivasan, Srini
+and Owens, Ken
+and Buskens, Richard W.",
+editor="Czarnecki, Krzysztof
+and Ober, Ileana
+and Bruel, Jean-Michel
+and Uhl, Axel
+and V{\"o}lter, Markus",
+title="NAOMI -- An Experimental Platform for Multi--modeling",
+booktitle="Model Driven Engineering Languages and Systems",
+year="2008",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="143--157",
+abstract="Domain-specific modeling languages (DSMLs) are designed to provide precise abstractions of domain-specific constructs. However, models for complex systems typically do not fit neatly within a single domain and capturing all important aspects of such a system requires developing multiple models using different DSMLs. Combining these models into multi-models presents difficult challenges, most importantly those of integrating the various models and keeping both the models and their associated data synchronized. To this end, we present NAOMI, an experimental platform for enabling multiple models, developed in different DSMLs, to work together. NAOMI analyzes model dependencies to determine the impact of changes to one model on other dependent models and coordinates the propagation of necessary model changes. NAOMI also serves as a useful testbed for exploring how diverse modeling paradigms can be combined.",
+isbn="978-3-540-87875-9"
+}
+
+@INPROCEEDINGS{4539563,
+author={D. Kolovos and R. Paige and F. Polack},
+booktitle={2008 1st International Conference on Software Testing, Verification, and Validation},
+title={Detecting and Repairing Inconsistencies across Heterogeneous Models},
+year={2008},
+volume={},
+number={},
+pages={356-364},
+keywords={formal specification;specification languages;Domain Specific Language;model engineering;modelling language;software development process;system requirement;Epsilon Validation Language;task-specific language;Context modeling;Domain specific languages;Software testing;Computer science;Programming;Prototypes;Project management;Technology management;Engineering management;Maintenance engineering;Model Driven Development;Model Consistency;Inconsistency Management},
+doi={10.1109/ICST.2008.23},
+ISSN={2159-4848},
+month={April},}
+
+N. Macedo, T. Jorge and A. Cunha, "A Feature-Based Classification of Model Repair Approaches," in IEEE Transactions on Software Engineering, vol. 43, no. 7, pp. 615-640, 1 July 2017.
+doi: 10.1109/TSE.2016.2620145
+keywords: {pattern classification;software maintenance;model repair approach;consistency management;model-driven engineering;MDE;feature-based classification system;Maintenance engineering;Unified modeling language;Taxonomy;Context;Feature extraction;Software engineering;Systematics;Model-driven engineering, consistency management, inconsistency handling, model repair},
+URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7605502&isnumber=7981478
+

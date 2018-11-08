@@ -1,0 +1,24 @@
+## On consistency
+
+# 2000_Nuseibeh_Making inconsistency respectable in software development
+
+* What is inconsistency? Example of consistency rules
+* On "Tolerating inconsistency"
+  * difficulty of carrying out a change with all its consequences atomically
+  * Problem: undetected inconsistencies
+  * Situations in which it migh be beneficial to tolerate certain (temporary?) inconsistencies
+  
+* Proposes framework for managing inconsistencies
+  * Uses "consistency rules"
+  * Focus on detecting and managing found inconsistencies, and analyzing impact and risk
+  * user can decide how to deal with them (ex. also possible to ignore them for now)
+* cost of resolving inconsistencies might sometimes actually be higher than their risk
+* checking for inconsistencies has a cost as well (ex. specification changes might require new consistency checking, meaning previous consistency checks turned out wasted)
+  * answers to those questions often problem-specific
+Appendix A: local vs global consistency checking:
+  * local change may be consistent, but introduce global inconsistency with other viewpoints (models)
+  * example of 3 consistent viewpoints:
+    * an addition is introduced that is locally consistent, and does not result in inconsistencies when models are pairwise checked
+	* but results in inconsistency if all 3 models are checked together
+	* -> pairwise consistency doesn't guarantee global consistency
+	* example is SW engineering: pairwise integration of modules is not sufficient; system level testing is still required
